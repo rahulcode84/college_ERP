@@ -40,6 +40,81 @@ A comprehensive Enterprise Resource Planning system designed specifically for ed
 - **React Hook Form** - Form management
 - **Chart.js** - Data visualization
 
+### Backend Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/college-erp-system.git
+   cd college-erp-system
+   ```
+
+2. **Install backend dependencies**
+   ```bash
+   cd server
+   npm install
+   ```
+
+3. **Environment Configuration**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+
+4. **Start MongoDB**
+   ```bash
+   # For local MongoDB
+   mongod
+   
+   # Or use MongoDB Atlas (update MONGODB_URI in .env)
+   ```
+
+5. **Run the backend server**
+   ```bash
+   # Development mode
+   npm run dev
+   
+   # Production mode
+   npm start
+   ```
+
+### Frontend Setup
+
+1. **Install frontend dependencies**
+   ```bash
+   cd client
+   npm install
+   ```
+
+2. **Start the development server**
+   ```bash
+   npm start
+   ```
+
+The application will be available at:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5000
 
 
+## 🔑 API Endpoints
 
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `POST /api/auth/logout` - User logout
+- `POST /api/auth/refresh` - Refresh access token
+- `POST /api/auth/forgot-password` - Password reset request
+- `POST /api/auth/reset-password` - Reset password
+
+### Students
+- `GET /api/students` - Get all students (Admin/Faculty)
+- `GET /api/students/profile` - Get student profile
+- `PUT /api/students/profile` - Update student profile
+- `GET /api/students/attendance` - Get attendance records
+- `GET /api/students/grades` - Get academic records
+
+### Faculty
+- `GET /api/faculty` - Get all faculty (Admin)
+- `GET /api/faculty/profile` - Get faculty profile
+- `PUT /api/faculty/profile` - Update faculty profile
+- `GET /api/faculty/classes` - Get assigned classes
+- `POST /api/faculty/attendance` - Mark attendance
